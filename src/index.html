@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Aswinkv.Com</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">  
+  <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap-4/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap-4/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/style/bootstrap-4/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" type="text/css" href="./assets/style/font-awesome.min.css"> 
+  <link rel="stylesheet" type="text/css" href="./assets/style/animate.css">
+  <link rel="stylesheet" type="text/css" href="./assets/style/hamburger.css">
+  <link rel="stylesheet" type="text/css" href="./assets/style/loader.css">
+  <link rel="stylesheet" type="text/css" href="./assets/style/style.css">
+</head>
+<body>
+  <app-root>
+    <div class="spinner"> A </div>
+    </app-root>
+</body>
+   <script>
+      function initMap() {
+        var uluru = {lat: 9.9960752, lng: 76.3584662};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: uluru,
+          styles: [
+    {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [
+            {
+                "hue": "#ff0000"
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": -30
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#353535"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#656565"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#505050"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#808080"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#d96c68"
+            },
+            {
+                "lightness": "17"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    }
+]
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2QQeYf0sJgU95YhZUamJf4sBxnexO62E&callback=initMap">
+    </script>
+  <script src="./assets/js/jquery-3.1.1.min.js"></script>
+  <script src="./assets/js/animatedModal/animatedModal.min.js"></script>
+  
+<script>
+    $("#demo00").animatedModal({
+                  
+                  modalTarget:'modal-01',
+                  animatedIn:'bounceInUp',
+                  animatedOut:'bounceOutDown',
+                  color:'#f45e00',
+    });
+  $("#demo01").animatedModal({
+                
+                modalTarget:'modal-02',
+                animatedIn:'bounceInUp',
+                animatedOut:'bounceOutDown',
+                color:'#e83b35',
+  });
+    $("#demo02").animatedModal(
+  {
+                  
+                modalTarget:'modal-03',
+                animatedIn:'bounceInUp',
+                animatedOut:'bounceOutDown',
+                color:'#001c6f',    
+  });
+    $("#demo03").animatedModal(
+  {
+                  
+                modalTarget:'modal-04',
+                animatedIn:'bounceInUp',
+                animatedOut:'bounceOutDown',
+                color:'#808080',    
+  });
+</script>
+</html>
