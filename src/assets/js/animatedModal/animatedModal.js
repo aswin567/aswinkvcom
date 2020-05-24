@@ -1,7 +1,7 @@
 /*=========================================
  * animatedModal.js: Version 1.0
  * author: João Pereira
- * website: http://www.joaopereira.pt
+ * website: https://joaopereira.pt
  * email: joaopereirawd@gmail.com
  * Licensed MIT 
 =========================================*/
@@ -13,7 +13,7 @@
         
         //Defaults
         var settings = $.extend({
-            modalTarget:'animatedModal', 
+            modalTarget: modal.attr('href').replace('#',''), 
             position:'fixed', 
             width:'100%', 
             height:'100%', 
