@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "aswinkvcom"
+  "defaultProject": "aswinkvcom",
+  "cli": {
+    "analytics": "0a4fc5bd-0fd7-4b80-8c80-9c3b9e25f0a0"
+  }
 }

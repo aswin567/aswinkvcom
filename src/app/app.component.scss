@@ -1,4 +1,5 @@
-$primary-color: #e83b35;
+@import "./../assets/style/variables.scss";
+
 .container{
 width: 98%;
     max-width: 960px;
@@ -184,7 +185,7 @@ width: 98%;
                         left: 5px;
                         border-left: 0px solid transparent;
                         border-right: 10px solid transparent;
-                        border-top: 10px solid #e83b35;
+                        border-top: 10px solid $primary-color;
                         position: absolute;
                     }
                 }
@@ -329,6 +330,9 @@ width: 98%;
                 }
             } 
             }           
+        }
+        ::ng-deep .mat-progress-bar-fill::after {
+            background-color: $primary-color !important;
         }
     }
     .projects-container{
@@ -496,9 +500,13 @@ width: 98%;
              left: 50%;
              width: 4px;
              margin-left: -2px;
-             background: rgba(232, 103, 103, 0.16);
+             background: $primary-color;
+             opacity: .2;
              border-radius:4px;
-             height: 86%; 
+             height: 95%; 
+        }
+        .job-container{
+            width: 100%;
         }
         .job{
             background-color: #fff;
@@ -569,10 +577,9 @@ width: 98%;
         }
         .jl{
             width: calc(50% - 60px);
-            float: left;
             margin-right: 60px;
-            margin-bottom: 80px;
             opacity: 0;
+            float: left;
             .dot{
                 right: -54px;
             }
@@ -587,17 +594,11 @@ width: 98%;
                 }               
             }
         }
-        .mr{
-            width: calc(50% - 50px);
-            margin-right: 50px;
-            opacity: 1
-        }
         .jr{
             width: calc(50% - 60px);
-            float: left;
             margin-left: 60px;
-            margin-top: 30%;
             opacity: 0;
+            float: right;
             .dot{
                 left: -54px;
             }
@@ -612,6 +613,11 @@ width: 98%;
                 }                  
             }
         }
+        .mr{
+            width: calc(50% - 50px);
+            margin-right: 50px;
+            opacity: 1
+        }
         .ml{
             width: calc(50% - 50px);
             margin-left: 50px;
@@ -620,7 +626,7 @@ width: 98%;
     }
     .edu-container{
         .timeline{
-            height: 65%;
+            height: 94%;
         }
     }
 footer{
@@ -745,7 +751,7 @@ footer{
                     font-family: Roboto;
                 font-weight: 500;
                 font-size: 17px;
-                color: #e83b35;
+                color: $primary-color;
                 padding: 16px;
                 background: rgba( 255, 255, 255,.8 );
                 margin-bottom: 22px;
@@ -782,10 +788,10 @@ footer{
 .msg-toster{
     width: 0;
     padding: 3px 10px;
-    color: #e83b35;
+    color: $primary-color;
     text-align: center;
     border-radius: 5px;
-    border: 1px dashed #e83b35;
+    border: 1px dashed $primary-color;
     overflow: hidden;
     transition: all ease-in-out .3s;
     visibility: hidden;
@@ -807,6 +813,9 @@ footer{
 .msg-toster-active{
     width: 280px;
     visibility: visible;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
 }
 @media only screen and (max-width: 765px) {
     .map-container{

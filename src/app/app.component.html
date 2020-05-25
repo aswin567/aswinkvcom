@@ -25,7 +25,8 @@
       </ul>
     </section>
     <section class="burger-menu pull-right col-xs-2">
-      <button class="hamburger hamburger--emphatic" [class.is-active]="expandMenu" type="button" (click)="onExpandMenu()">
+      <button class="hamburger hamburger--emphatic" [class.is-active]="expandMenu" type="button"
+        (click)="onExpandMenu()">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -55,8 +56,10 @@
 
 
   </div>
+
   <div class="banner ">
   </div>
+
   <div class="container">
     <section id="about" class=" section-about-us">
       <div class="my-info-container" [class.cardUp]="!cardUp">
@@ -76,7 +79,7 @@
             <ul class="list">
               <li class="clearfix">
                 <strong class="title">Age</strong>
-                <span class="cont">24</span>
+                <span class="cont">{{age}}</span>
               </li>
               <li class="clearfix">
                 <strong class="title">FROM</strong>
@@ -84,19 +87,15 @@
               </li>
               <li class="clearfix">
                 <strong class="title">E-mail</strong>
-                <span class="cont">toaswink@gmail.com</span>
+                <span class="cont"><a href="mailto:toaswink@gmail.com">toaswink@gmail.com</a></span>
               </li>
               <li class="clearfix">
                 <strong class="title">Phone</strong>
-                <span class="cont">+91 9567 75 3387</span>
+                <span class="cont"><a href="tel:+91-956-775-3387">+91-956-775-3387</a></span>
               </li>
               <li class="clearfix">
                 <strong class="title">Expirence</strong>
-                <span class="cont">3 year</span>
-              </li>
-              <li class="clearfix">
-                <strong class="title">Freelance</strong>
-                <span class="cont">2 year and 2 months</span>
+                <span class="cont">{{experince}}</span>
               </li>
             </ul>
           </div>
@@ -143,10 +142,7 @@
           <a class="btn btn-lg btn-border ripple" target="_blank" href="../assets/files/Aswin Front End Developer.pdf">
             Download Resume </a>
         </p>
-        <p>Hello! I’m Aswin KV, a self-driven software developer specialized in front-end development. Well-versed in HTML 5,
-          CSS 3, and other numerous scripting languages including JavaScript, TypeScript and frameworks such as Angular 2.0,
-          Bootstrap 3, Material 2 and SASS. I have experience in all stages of the development cycle of dynamic web projects,
-          along with strong background in project management and customer relations.</p>
+        <p *ngIf="intro$ | async as data">{{data.intro}}</p>
 
       </div>
     </section>
@@ -154,126 +150,17 @@
       <div class="skills-container">
         <h2 class="section-title" [class.header-up]="skillsHeaderUp">Professional Skills</h2>
         <div class="skill-box">
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">HTML 5</span>
-                  <span class="bar-value">{{skill.html}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.html></mat-progress-bar>
+          <div class="col-md-6 col-sm-12" *ngFor="let skill of initSkills">
+            <div class="progress-bar">
+              <div class="bar-data">
+                <span class="bar-title">{{skill.technology}}</span>
+                <span class="bar-value">{{skill.rating}}%</span>
               </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">CSS 3</span>
-                  <span class="bar-value">{{skill.css}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.css></mat-progress-bar>
-              </div>
+              <mat-progress-bar mode="determinate" [value]="skill.rating"></mat-progress-bar>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">JavaScript</span>
-                  <span class="bar-value">{{skill.js}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.js></mat-progress-bar>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">TypeScript</span>
-                  <span class="bar-value">{{skill.ts}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.ts></mat-progress-bar>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">Angular 2.0-6.0 </span>
-                  <span class="bar-value">{{skill.angular}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.angular></mat-progress-bar>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">SASS</span>
-                  <span class="bar-value">{{skill.sass}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.sass></mat-progress-bar>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">Material 2.0 </span>
-                  <span class="bar-value">{{skill.md}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.md></mat-progress-bar>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">Bootstrap 3</span>
-                  <span class="bar-value">{{skill.bs}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.bs></mat-progress-bar>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">GIT</span>
-                  <span class="bar-value">{{skill.git}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.git></mat-progress-bar>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">Adobe Photoshop CC</span>
-                  <span class="bar-value">{{skill.photoshop}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.photoshop></mat-progress-bar>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">JIRA</span>
-                  <span class="bar-value">{{skill.jira}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.jira></mat-progress-bar>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="progress-bar">
-                <div class="bar-data">
-                  <span class="bar-title">Redmine</span>
-                  <span class="bar-value">{{skill.redmine}}%</span>
-                </div>
-                <mat-progress-bar mode="determinate" [value]=skill.redmine></mat-progress-bar>
-              </div>
-            </div>
-          </div>
+          <div class="clearfix"></div>
+
         </div>
       </div>
     </section>
@@ -281,72 +168,47 @@
       <div class="exp-container timeline-cont">
         <h2 class="section-title" [class.header-up]="exHeaderUp">Work Experience</h2>
         <div class="timeline"></div>
-        <div class="job jl" [class.mr]="exMarginTrans">
-          <span class="dot"></span>
-          <span class="arrow"></span>
-          <div class="date">2015 - 2018</div>
-          <h3>Zinemind Technologies</h3>
-          <h4>Front End Developer</h4>
-          <p>Here at Zinemind, I am in charge of the front-end development of a range of projects, which includes UI development
-            of web applications. As a Front-End developer, I also have to interact with clients on a daily basis, which has
-            helped me a lot in improving my customer service skills.</p>
+        <div class="job-container" *ngFor="let workExperince of workExperinces$ | async; let i = index">
+          <div class="job" [class.ml]="i%2 === 1  && exMarginTrans" [class.mr]="i%2 === 0 && exMarginTrans" [class.jr]="i%2 === 1" [class.jl]="i%2 === 0">
+            <span class="dot"></span>
+            <span class="arrow"></span>
+            <div class="date">{{workExperince.startYear}}-{{workExperince.endYear}}</div>
+            <h3>{{workExperince.companyName}}</h3>
+            <h4>{{workExperince.role}}</h4>
+            <p>{{workExperince.discription}}</p>
+          </div>
+          <div class="clearfix"></div>
         </div>
-        <div class="job jr" [class.ml]="exMarginTrans">
-          <span class="dot"></span>
-          <span class="arrow"></span>
-          <div class="date">2013 - 2015</div>
-          <h3>Freelance</h3>
-          <h4>UI Developer</h4>
-          <p>During my college days, I used to work as a freelance UI designer and developer. I have designed and developed
-            around 20 websites during that time</p>
-        </div>
-        <div class="clearfix"></div>
       </div>
     </section>
     <section id="edu" class="section section-edu">
       <div class="edu-container  timeline-cont">
         <h2 class="section-title" [class.header-up]="edHeaderUp">Education</h2>
         <div class="timeline"></div>
-        <div class="job jl" [class.mr]="edMarginTrans">
-          <span class="dot"></span>
-          <span class="arrow"></span>
-          <div class="date">2011 - 2015</div>
-          <h3>B Tech</h3>
-          <h4>Calicut University</h4>
-          <p>I did my engineering in Computer Science from Vidya Academy of Science and Technology Thrissur, in order to pursue
-            my interest in software technologies. It would be safe to say that my professional career actually kick-started
-            there, in that inspiring campus environment of Vidya</p>
+        <div class="job-container" *ngFor="let educationDetail of educationDetails$ | async; let i = index">
+          <div class="job" [class.ml]="i%2 === 1  && edMarginTrans" [class.mr]="i%2 === 0 && edMarginTrans" [class.jr]="i%2 === 1" [class.jl]="i%2 === 0">
+            <span class="dot"></span>
+            <span class="arrow"></span>
+            <div class="date">{{educationDetail.startYear}}-{{educationDetail.endYear}}</div>
+            <h3>{{educationDetail.companyName}}</h3>
+            <h4>{{educationDetail.role}}</h4>
+            <p>{{educationDetail.discription}}</p>
+          </div>
+          <div class="clearfix"></div>
         </div>
-        <div class="job jr" [class.ml]="edMarginTrans">
-          <span class="dot"></span>
-          <span class="arrow"></span>
-          <div class="date">2009 - 2011</div>
-          <h3>Higher Secondary</h3>
-          <h4>St Thomas Thrissur</h4>
-          <p>I completed my higher secondary education from St. Thomas CHSS, Thrissur</p>
-        </div>
-        <div class="job jl" [class.mr]="edMarginTrans">
-          <span class="dot"></span>
-          <span class="arrow"></span>
-          <div class="date">2008 - 2009</div>
-          <h3>SSLC</h3>
-          <h4>St Joseph's Thrissur</h4>
-          <p>The longest period of my education I spend here, From pre Kg section to 10th grade I continued here.</p>
-        </div>
-        <div class="clearfix"></div>
       </div>
     </section>
     <section id="pf" class="section section-portfolio">
       <div class="portfolio-container">
         <h2 class="section-title" [class.header-up]="pfHeaderUp">Projects</h2>
         <div class="projects-container">
-            <a id="demo00" href="#modal01">
-              <div class="projects">
-                <div class="image-container">
-                  <img src="../assets/images/pr0.png" width="100%">
-                </div>
+          <a id="demo00" href="#modal01">
+            <div class="projects">
+              <div class="image-container">
+                <img src="../assets/images/pr0.png" width="100%">
               </div>
-            </a>
+            </div>
+          </a>
           <a id="demo01" href="#modal-02">
             <div class="projects">
               <div class="image-container">
@@ -412,7 +274,8 @@
                 </div>
                 <div class="col-xs-12 input">
                   <mat-form-field class="full-width">
-                    <textarea matInput placeholder="Content" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="5" formControlName="content" class="full-width"></textarea>
+                    <textarea matInput placeholder="Content" matTextareaAutosize matAutosizeMinRows="1"
+                      matAutosizeMaxRows="5" formControlName="content" class="full-width"></textarea>
                   </mat-form-field>
                 </div>
                 <div class="btn-cnt">
@@ -469,54 +332,55 @@
 
 <!--DEMO01-->
 <div id="modal01" class="modal-full">
-    <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
-    <div class="close-modal01 modal-close">
-      <p> X</p>
-    </div>
-    <div class="content-container">
-      <div class="modal-header">
-        <div class="image-container">
-          <img src="../assets/images/prHd0.png">
-        </div>
-        One Place App (Product)
+  <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID  class="close-animatedModal" -->
+  <div class="close-modal01 modal-close">
+    <p> X</p>
+  </div>
+  <div class="content-container">
+    <div class="modal-header">
+      <div class="image-container">
+        <img src="../assets/images/prHd0.png">
       </div>
-  
-      <div class="col-md-12 col-sm-12 col-xs-12 prj-dis">
-  
-        <div class="content">
-          <div class="discription">
-              Search Force is a digital advertising technology and services company that helps enterprise businesses reach the right person at the right time with the most relevant message. Its works on oracle DB with java back-end 
-              <a class="link" href="https://searchforce.net">https://searchforce.net</a>
-          </div>
-          <div class="role">
-            <p>Role:</p>
-            <p>Front End Developer</p>
-          </div>
-          <div class="resp col-xs-12 col-sm-12 col-md-6 sf">
-            <h5>Responsibilities</h5>
-            <ul>
-              <li>Development of angular 4.0 components.</li>
-              <li>Front-end architecture of the application.</li>
-              <li>Client side validations.</li>
-              <li>Front end service calls.</li>
-              <li>Development of UI reusable components.</li>
-              <li>Integration of components to the application.</li>
-            </ul>
-          </div>
-          <div class="technologies resp col-xs-12 col-sm-12 col-md-6 sf">
-            <h5>Technologies</h5>
-            <ul>
-              <li>Angular 4</li>
-              <li>HTML 5</li>
-              <li>SASS</li>
-              <li>Angular CLI</li>
-              <li>JIRA</li>
-            </ul>
-          </div>
+      One Place App (Product)
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12 prj-dis">
+
+      <div class="content">
+        <div class="discription">
+          Search Force is a digital advertising technology and services company that helps enterprise businesses reach
+          the right person at the right time with the most relevant message. Its works on oracle DB with java back-end
+          <a class="link" href="https://searchforce.net">https://searchforce.net</a>
+        </div>
+        <div class="role">
+          <p>Role:</p>
+          <p>Front End Developer</p>
+        </div>
+        <div class="resp col-xs-12 col-sm-12 col-md-6 sf">
+          <h5>Responsibilities</h5>
+          <ul>
+            <li>Development of angular 4.0 components.</li>
+            <li>Front-end architecture of the application.</li>
+            <li>Client side validations.</li>
+            <li>Front end service calls.</li>
+            <li>Development of UI reusable components.</li>
+            <li>Integration of components to the application.</li>
+          </ul>
+        </div>
+        <div class="technologies resp col-xs-12 col-sm-12 col-md-6 sf">
+          <h5>Technologies</h5>
+          <ul>
+            <li>Angular 4</li>
+            <li>HTML 5</li>
+            <li>SASS</li>
+            <li>Angular CLI</li>
+            <li>JIRA</li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <!--DEMO01-->
 <div id="modal-02" class="modal-full">
@@ -536,7 +400,8 @@
 
       <div class="content">
         <div class="discription">
-          Business to business portal web application for CANON. It works on Oracle DB as an online ordering system between partners
+          Business to business portal web application for CANON. It works on Oracle DB as an online ordering system
+          between partners
           and canon.
           <a class="link" href="https://portal.canon-me.com">https://portal.canon-me.com</a>
         </div>
@@ -581,12 +446,14 @@
       <div class="image-container">
         <img src="../assets/images/prHd1.png">
       </div>
-      ERP</div>
+      ERP
+    </div>
 
     <div class="col-md-12 col-sm-12 col-xs-12 prj-dis">
       <div class="content">
         <div class="discription">
-          An Angular 2 web ERP application. It's the core business process management software of Kerala Cricket Association.
+          An Angular 2 web ERP application. It's the core business process management software of Kerala Cricket
+          Association.
         </div>
         <div class="role">
           <p>Role:</p>
@@ -630,11 +497,13 @@
       <div class="image-container">
         <img src="../assets/images/prHd2.png">
       </div>
-      Test Sutra  (Product)</div>
+      Test Sutra (Product)
+    </div>
     <div class="col-md-12 col-sm-12 col-xs-12 prj-dis">
       <div class="content">
         <div class="discription">
-          Test Sutra is an Android hybrid application developed using AngularJS and ionic framework. It is an application suite which
+          Test Sutra is an Android hybrid application developed using AngularJS and ionic framework. It is an
+          application suite which
           helps organizations to streamline their testing, quality, safety inspections and verification processes.
         </div>
         <div class="role">

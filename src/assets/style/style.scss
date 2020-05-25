@@ -1,3 +1,4 @@
+@import "./variables.scss";
 @font-face {
     font-family: 'FontAwesome';
     src: url('../fonts/fontawesome-webfont.eot');
@@ -42,6 +43,7 @@
     src: url('../fonts/roboto/RobotoRegular.woff2') format('woff2'),
          url('../fonts/roboto/RobotoRegular.woff') format('woff'),
          }
+
 html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
 html, html a{-webkit-font-smoothing:antialiased;}         
 *{
@@ -103,21 +105,19 @@ body{
 .mat-progress-bar-buffer{
     background: rgba(181, 178, 178, 0.4) !important;
 }
-.mat-progress-bar-fill::after {
-    background-color: #e83b35!important;
-}
+
 .mat-input-placeholder.md-focused.md-empty{
-    color: #e83b35!important;  
+    color:  $primary-color !important;
 }
 .mat-input-placeholder.md-empty{
     color: rgba(0, 0, 0, 0.38) !important; 
 }
 .mmatd-input-placeholder{
-    color: #e83b35!important;  
+    color:  $primary-color !important;
 }
 .mat-input-underline{
     .mat-input-ripple{
-        background: #e83b35!important; 
+        background:  $primary-color !important;
     }
 }
 
@@ -153,7 +153,7 @@ body{
 .mat-simple-snackbar-action{
     background: #fff;
     border: none;
-    color: #e83b35;
+    color:  $primary-color !important;
     border-radius: 3px;
     cursor: pointer;
 }

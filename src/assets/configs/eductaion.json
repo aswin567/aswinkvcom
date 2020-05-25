@@ -1,0 +1,23 @@
+[
+    {
+       "startYear": "2011",
+       "endYear": "2015",
+       "companyName": "B Tech",
+       "role": "Calicut University",
+       "discription": "I did my engineering in Computer Science from Vidya Academy of Science and Technology Thrissur, in order to pursue my interest in software technologies. It would be safe to say that my professional career actually kick-started there, in that inspiring campus environment of Vidya"
+    },
+    {
+       "startYear": "2009",
+       "endYear": "2011",
+       "companyName": "Higher Secondary",
+       "role": "St Thomas Thrissur",
+       "discription": "I completed my higher secondary education from St. Thomas CHSS, Thrissur"
+    },
+    {
+       "startYear": "2008",
+       "endYear": "2009",
+       "companyName": "SSLC",
+       "role": "St Joseph's Thrissur",
+       "discription": "The longest period of my education I spend here, From pre Kg section to 10th grade I continued here."
+    }
+ ]

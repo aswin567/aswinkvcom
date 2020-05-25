@@ -1,0 +1,54 @@
+[
+    {
+        "technology": "Angular 2-9",
+        "rating": "0"
+    },    
+    {
+        "technology": "Node JS",
+        "rating": "0"
+    },    
+    {
+        "technology": "Postgress/Mongo (DB)",
+        "rating": "0"
+    },    
+    {
+        "technology": "NGRX",
+        "rating": "0"
+    },    
+    {
+        "technology": "Rx JS",
+        "rating": "0"
+    },    
+    {
+        "technology": "React JS",
+        "rating": "0"
+    },    
+    {
+        "technology": "HTML 5",
+        "rating": "0"
+    },    
+    {
+        "technology": "SCSS/CSS",
+        "rating": "0"
+    },    
+    {
+        "technology": "Typescript/ Javascript",
+        "rating": "0"
+    },    
+    {
+        "technology": "GIT",
+        "rating": "0"
+    },    
+    {
+        "technology": "Visual Studio Code",
+        "rating": "0"
+    },    
+    {
+        "technology": "TFS",
+        "rating": "0"
+    },   
+    {
+        "technology": "Agile",
+        "rating": "0"
+    }
+]
