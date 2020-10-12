@@ -1,0 +1,276 @@
+<div class="main-conatiner">
+    <div class="header col-xs-12 col-lg-12" [class.transHeader]="headerTrasparent">
+      <section class="logo col-xs-2 pull-left">
+        <div class="logo-cont">
+          <img src="../assets/images/mylogo.png" (click)="about()" id="logo">
+        </div>
+      </section>
+      <section class="menu pull-right col-xs-10">
+        <ul>
+          <li (click)="onNavigate('abt')" [class.active-menu]="menu.about">
+            <a href="#about">About</a>
+          </li>
+          <li (click)="onNavigate('skills')" [class.active-menu]="menu.skill">
+            <a href="#skills">Skills</a>
+          </li>
+          <li (click)="onNavigate('exp')" [class.active-menu]="menu.exp">
+            <a href="#exp">Experience</a>
+          </li>
+          <li (click)="onNavigate('contact')" [class.active-menu]="menu.contact">
+            <a href="#contact">Contacts</a>
+          </li>
+        </ul>
+      </section>
+      <section class="burger-menu pull-right col-xs-2">
+        <button class="hamburger hamburger--emphatic" [class.is-active]="expandMenu" type="button"
+          (click)="onExpandMenu()">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+      </section>
+      <div class="mob-menu-container" [class.mm-container]="expandMenu" (click)="onExpandMenu()">
+        <div class="mob-menu" [class.mob-active]="expandMenu">
+          <ul>
+            <li (click)="onNavigate('abt')" [class.active-menu]="menu.about">
+              <a href="#about">About</a>
+            </li>
+            <li (click)="onNavigate('skills')" [class.active-menu]="menu.skill">
+              <a href="#skills">Skills</a>
+            </li>
+            <li (click)="onNavigate('exp')" [class.active-menu]="menu.exp">
+              <a href="#exp">Experience</a>
+            </li>
+            <li (click)="onNavigate('contact')" [class.active-menu]="menu.contact">
+              <a href="#contact">Contacts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+  
+    </div>
+  
+    <div class="banner ">
+    </div>
+  
+    <div class="container">
+      <section id="about" class=" section-about-us">
+        <div class="my-info-container animate__animated animate__slideInUp">
+          <div class="u-p">
+            <div class="col-sm-5 col-xs-12 img">
+              <img src="../assets/images/myPic.jpg" alt="">
+            </div>
+            <div class="col-sm-7 col-xs-12">
+              <div class="profile-info">
+                <div class="greetings">
+                  <span>Hello</span>
+                </div>
+                <h1 class="title">
+                  <span>I'm</span> Aswin KV </h1>
+                <h2 class="position">Full Stack Developer</h2>
+              </div>
+              <ul class="list">
+                <li class="clearfix">
+                  <strong class="title">Age</strong>
+                  <span class="cont">{{age}}</span>
+                </li>
+                <li class="clearfix">
+                  <strong class="title">FROM</strong>
+                  <span class="cont">Kerala, India</span>
+                </li>
+                <li class="clearfix">
+                  <strong class="title">E-mail</strong>
+                  <span class="cont"><a href="mailto:toaswink@gmail.com">toaswink@gmail.com</a></span>
+                </li>
+                <li class="clearfix">
+                  <strong class="title">Phone</strong>
+                  <span class="cont"><a href="tel:+91-956-775-3387">+91-956-775-3387</a></span>
+                </li>
+                <li class="clearfix">
+                  <strong class="title">Expirence</strong>
+                  <span class="cont">{{experince}}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="l-p">
+            <ul class="social">
+              <li>
+                <a href="https://github.com/aswin567" target="_blank">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com/aswin567" target="_blank">
+                  <i class="fa fa-facebook-official"></i>
+                </a>
+              </li>
+              <li>
+                <a href="http://stackoverflow.com/users/6701799/aswin-kv" target="_blank">
+                  <i class="fa fa-stack-overflow"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://in.linkedin.com/in/aswinkv" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/aswin_567" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.behance.net/aswink" target="_blank">
+                  <i class="fa fa-behance"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="section-txt-btn">
+  
+          <p>
+            <a class="btn btn-lg btn-border ripple" target="_blank" href="https://bit.ly/2GULf0M">
+              Download Resume </a>
+          </p>
+          <p *ngIf="intro$ | async as data">{{data.intro}}</p>
+  
+        </div>
+      </section>
+      <section id="skills" class="section section-skills" (scroll)="onScroll($event)">
+        <div class="skills-container">
+          <h2 class="section-title" [class.header-up]="skillsHeaderUp">Professional Skills</h2>
+          <div class="skill-box">
+            <div class="col-md-6 col-sm-12" *ngFor="let skill of initSkills">
+              <div class="progress-bar">
+                <div class="bar-data">
+                  <span class="bar-title">{{skill.technology}}</span>
+                  <span class="bar-value">{{skill.rating}}%</span>
+                </div>
+                <mat-progress-bar mode="determinate" [value]="skill.rating"></mat-progress-bar>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+  
+          </div>
+        </div>
+      </section>
+      <section id="exp" class="section section-exp">
+        <div class="exp-container timeline-cont">
+          <h2 class="section-title" [class.header-up]="exHeaderUp">Work Experience</h2>
+          <div class="timeline"></div>
+          <div class="job-container" *ngFor="let workExperince of workExperinces$ | async; let i = index">
+            <div class="job" [class.ml]="i%2 === 1  && exMarginTrans" [class.mr]="i%2 === 0 && exMarginTrans"
+              [class.jr]="i%2 === 1" [class.jl]="i%2 === 0">
+              <span class="dot"></span>
+              <span class="arrow"></span>
+              <div class="date">{{workExperince.startYear}}-{{workExperince.endYear}}</div>
+              <h3>{{workExperince.companyName}}</h3>
+              <h4>{{workExperince.role}}</h4>
+              <p>{{workExperince.discription}}</p>
+              <button mat-stroked-button  routerLink="./project-details/{{workExperince.id}}">Project Details</button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </section>
+      <section id="edu" class="section section-edu">
+        <div class="edu-container  timeline-cont">
+          <h2 class="section-title" [class.header-up]="edHeaderUp">Education</h2>
+          <div class="timeline"></div>
+          <div class="job-container" *ngFor="let educationDetail of educationDetails$ | async; let i = index">
+            <div class="job" [class.ml]="i%2 === 1  && edMarginTrans" [class.mr]="i%2 === 0 && edMarginTrans"
+              [class.jr]="i%2 === 1" [class.jl]="i%2 === 0">
+              <span class="dot"></span>
+              <span class="arrow"></span>
+              <div class="date">{{educationDetail.startYear}}-{{educationDetail.endYear}}</div>
+              <h3>{{educationDetail.companyName}}</h3>
+              <h4>{{educationDetail.role}}</h4>
+              <p>{{educationDetail.discription}}</p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section section-contacts">
+        <div class="contacts-container">
+          <h2 class="section-title" [class.header-up]="contactHeaderUp">Contacts</h2>
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div class="contact-box" style="min-height: 587px;">
+                <h3>Feel free to contact</h3>
+                <form [formGroup]="appMasterForm" (ngSubmit)="submit()" novalidate>
+                  <div class="col-xs-12 input">
+                    <mat-form-field class="example-full-width full-width">
+                      <input matInput placeholder="Name" formControlName="name">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-xs-12 input">
+                    <mat-form-field class="example-full-width full-width">
+                      <input matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-xs-12 input">
+                    <mat-form-field class="example-full-width full-width">
+                      <input matInput placeholder="Subject" formControlName="subject">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-xs-12 input">
+                    <mat-form-field class="full-width">
+                      <textarea matInput placeholder="Content" matTextareaAutosize matAutosizeMinRows="1"
+                        matAutosizeMaxRows="5" formControlName="content" class="full-width"></textarea>
+                    </mat-form-field>
+                  </div>
+                  <div class="btn-cnt">
+                    <button type="submit" [disabled]="appMasterForm.invalid">
+                      <i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
+                  </div>
+                </form>
+                <!-- <div class="msg-toster" [class.msg-toster-active]="tosterActive">
+                  Message send sucessfully
+                  <div class="close" (click)="closeToster()">
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="address-box" style="min-height: 587px;">
+                <ul class="address">
+                  <li class="clearfix">
+                    <strong>E-mail</strong>
+                    <span>
+                      <a href="mailto:toaswink@gmail.com">toaswink@gmail.com</a>
+                    </span>
+                  </li>
+                  <li class="clearfix">
+                    <strong>Phone</strong>
+                    <span>+91 9567 75 3387</span>
+                  </li>
+                  <li class="clearfix">
+                    <strong>Landline</strong>
+                    <span>+48 02 79 14 35</span>
+                  </li>
+                  <li class="clearfix">
+                    <strong>Skype</strong>
+                    <span>toaswink</span>
+                  </li>
+                  <li class="clearfix">
+                    <strong>Address</strong>
+                    <span>Kakanad, Kochi-030, Kerala, India</span>
+                  </li>
+                </ul>
+                <div class="map-container">
+                  <div id="map"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer></footer>
+  </div>

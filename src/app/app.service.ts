@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { WorkExperince } from './interface/work-experince';
 import { Observable } from 'rxjs';
 import { Skill } from './interface/skill';
+import { TimePeriod } from './interface/time-period';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,9 @@ export class AppService {
 
   getIntro(): Observable<string>{
     return this.http.get<string>('assets/configs/intro.json');
+  }
+
+  getTimePeriods(): Observable<TimePeriod>{
+    return this.http.get<TimePeriod>('https://rocky-shore-96971.herokuapp.com/getPeriod');
   }
 }

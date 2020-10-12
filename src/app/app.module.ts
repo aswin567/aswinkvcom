@@ -9,22 +9,35 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatIconModule} from '@angular/material/icon';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    ProjectDetailsComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,
     MatInputModule,
     MatSnackBarModule,
     MatProgressBarModule,
+    MatIconModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

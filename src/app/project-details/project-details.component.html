@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="header">
+        <div (click)="goBack()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">arrow_back</mat-icon>
+        <label>Back</label>
+    </div>
+    </div>
+    <div class="company" *ngIf="slectedworkExperinces">
+        <div class="company-header">
+            <div class="company-name">
+                <b>{{slectedworkExperinces.companyName}}</b> | {{slectedworkExperinces.startYear}} -
+                {{slectedworkExperinces.endYear}}
+                <a class="link" [href]="slectedworkExperinces.companyUrl">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">not_listed_location</mat-icon>
+                </a>
+            </div>
+            <div class="role">
+                <label>Role</label>
+                <div><b>{{slectedworkExperinces.role}}</b></div>
+            </div>
+        </div>
+        <div class="role-des">
+            <div class="description">
+                {{slectedworkExperinces.discription}}
+            </div>
+            <div class="projects">
+                <label><b>Projects | worked at {{slectedworkExperinces.nickName}}</b></label>
+                <div class="project-list">
+                    <div class="project-details" *ngFor="let project of slectedworkExperinces.projects">
+                        <div class="project-name">
+                            <b>{{project.clientName}}</b>
+                            <a class="link" [href]="project.projectUrl" *ngIf="project.projectUrl">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">not_listed_location
+                                </mat-icon>
+                            </a>
+                        </div>
+                        <div class="project-des">
+                            {{project.discription}}
+                        </div>
+                        <div class="project-technologies">
+                            <label><b>Technologies</b></label>
+                            <div class="technolgies-list">
+                                <div class="tech" *ngFor="let tech of project.technologies">
+                                    {{tech}}
+                                </div>
+                            </div>
+                            <div class="clear-fix"></div>
+                        </div>
+                        <div class="project-responsibilities">
+                            <label><b>Responsibilities</b></label>
+                            <ul>
+                                <li *ngFor="let responsibility of project.responsibilities">
+                                    {{responsibility}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clear-fix"></div>
+    </div>
+</div>

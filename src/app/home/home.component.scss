@@ -1,0 +1,166 @@
+@import "./../../assets/style/variables.scss";
+
+.container{
+    width: 98%;
+    max-width: 960px;
+    margin: 0 auto;    
+}
+
+.mm-container{
+    visibility: visible !important;
+}
+.transHeader{
+    background: transparent !important;
+    color:rgba(255, 255, 255, 0.7);
+    box-shadow:none !important;
+    .hamburger-inner{
+        background: rgba(255, 255, 255, 0.7);
+        &::before,&::after{
+        background: rgba(255, 255, 255, 0.7);
+        }
+    }
+    .hamburger--emphatic.is-active .hamburger-inner{
+        background: transparent;
+    }
+    .logo{
+        .logo-cont{
+            img{
+                display: block;
+            }
+        }
+    }
+}
+.active-menu{
+    position: relative;
+    padding-bottom: 10px !important;
+    transition: all ease-in-out .3s;
+    color: $primary-color !important;
+}
+
+#map {
+    height: 302px;
+    }
+
+.msg-toster{
+    width: 0;
+    padding: 3px 10px;
+    color: $primary-color;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px dashed $primary-color;
+    overflow: hidden;
+    transition: all ease-in-out .3s;
+    visibility: hidden;
+    height: 35px;
+    margin: 7px auto 0;
+    .close{
+        font-size: 19px;
+        opacity: 1;
+        margin: 3px 0;
+        color: #DDF;
+
+        
+    }
+} 
+.link{
+    color: #fff;
+    text-decoration: underline;
+}
+.msg-toster-active{
+    width: 280px;
+    visibility: visible;
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+}
+@media only screen and (max-width: 765px) {
+    .map-container{
+        height: 322px !important
+    }
+    #map {
+    height: 313px;
+    }    
+}
+@media only screen and (max-width: 600px) {
+    .jl,.jr {
+        width: 100% !important;
+        margin: 0 auto !important;
+        margin-bottom: 40px !important;
+    }
+    .arrow,.dot{
+        display: none !important;
+    }
+    .timeline-cont{
+        .timeline{
+        height: 84% !important;            
+        }
+    }
+    
+}
+
+
+@media only screen and (max-width: 575px) {
+    
+    .col-xs-12{
+        text-align: center;
+        img{
+            width: 62% !important;
+            margin: 10px auto;
+        }
+    }
+    .menu{
+        display: none;
+    }
+.active-menu{
+    padding-bottom: 0px !important;
+}    
+}
+@media only screen and (min-width: 575px) {
+.burger-menu{
+    display: none;
+}
+.mob-menu{
+    display: none;
+}
+}
+
+@media only screen and (max-width: 575px) {
+.msg-toster{
+    
+    height: 30px;
+    font-size: 12px;
+}
+.msg-toster-active{
+    width: 280px;
+    visibility: visible;
+}
+
+.prj-img{
+    height: auto!important;
+    .image-container{
+        img{
+            width: 36% !important;
+        }
+    }
+}
+.prj-dis{
+    border: none !important;
+}
+}
+
+@media only screen and (max-width: 400px) {
+.u-p{
+          padding: 57px 30px 15px !important;
+}
+.cont{
+    margin-left: 120px !important;
+    font-size: 13px !important;
+}
+.modal-header{
+    .image-container{
+        img{
+            width: 100%;
+        }
+    }
+}
+}

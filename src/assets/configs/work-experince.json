@@ -1,23 +1,119 @@
-[
-    {
-       "startYear": "2019",
-       "endYear": null,
-       "companyName": "Sienens Technologies and Services",
-       "role": "Software engineer",
-       "discription": "Here at Zinemind, I am in charge of the front-end development of a range of projects, which includes UI development of web applications. As a Front-End developer, I also have to interact with clients on a daily basis, which has helped me a lot in improving my customer service skills.Here at Zinemind, I am in charge of the front-end development of a range of projects, which includes UI development of web applications. As a Front-End developer, I also have to interact with clients on a daily basis, which has helped me a lot in improving my customer service skills."
-    },
-    {
-       "startYear": "2018",
-       "endYear": "2019",
-       "companyName": "Ideas 2 IT (Siemens)",
-       "role": "Front End Developer",
-       "discription": "Here at Zinemind, I am in charge of the front-end development of a range of projects, which includes UI development of web applications. As a Front-End developer, I also have to interact with clients on a daily basis, which has helped me a lot in improving my customer service skills."
-    },
-    {
-       "startYear": "2015",
-       "endYear": "2018",
-       "companyName": "Zinemind Technologies",
-       "role": "Front End Developer",
-       "discription": "Here at Zinemind, I am in charge of the front-end development of a range of projects, which includes UI development of web applications. As a Front-End developer, I also have to interact with clients on a daily basis, which has helped me a lot in improving my customer service skills."
-    }
- ]
+[{
+    "id": 1,
+    "startYear": "2018",
+    "endYear": null,
+    "companyName": "Siemens Technologies and Services",
+    "companyUrl":"https://new.siemens.com/",
+    "nickName":"Siemens",
+    "role": "Software engineer",
+    "discription": "I am working here as a senior software engineer for 2+ year. Completed one internal project and mainly working on Siemens cloud projects, worked using the latest front - end technologies like Angular 6/7/9. And backend technologies like node Js and PostgreSQL. Here I got a great exposure in AI/ML, NLP and Backend technologies. I started working in Siemens as deputation from Ideas 2 IT and the moved to siemens own roles.",
+    "projects": [{
+      "clientName": "Mind Apps",
+      "projectUrl": "https://siemens.mindsphere.io/en",
+      "discription": "SIMATIC MindApps take advantage of the data harnessed by MindSphere, our IoT operating system, in order to bring you closer to your machines, plants, and automation processes, whether you are overseeing global activities or operating locally within the plant. And if you are an equipment manufacturer, SIMATIC MindApps will, too, transform your business, allowing you to guarantee better service and availability to your clients",
+      "technologies": [
+        "Angular 10",
+        "NgRx Store",
+        "Node Js",
+        "Postgress SQL",
+        "HTML 5",
+        "Karma Jasmin",
+        "Cypress",
+        "SASS",
+        "Angular CLI",
+        "GIT"
+      ],
+      "responsibilities": [
+        "Handling the scrum team",
+        "Development of angular 6.0 components.",
+        "Front-end architecture of the application.",
+        "Backend functionality of the application.",
+        "Technical discussion with partners about the implementation.",
+        "Code standards and code quality of the product.",
+        "Implementing new features in backend"
+      ]
+    }]
+  },
+  {
+    "id": 3,
+    "startYear": "2015",
+    "endYear": "2018",
+    "companyName": "Zinemind Technologies",
+    "companyUrl":"https://www.zinemind.com",
+    "nickName":"Zinemind",
+    "role": "Front End Developer",
+    "discription": "I am working here as front-end developer for 2 years. Completed three projects, worked using latest front-end technologies like Angular 2/4, SASS, Angular CLI etc. All three projects are web applications.",
+    "projects": [{
+      "clientName": "Search Force",
+      "projectUrl":"https://searchforce.net",
+      "discription": "Search Force is a digital advertising technology and services company that helps enterprise businesses reach the right person at the right time with the most relevant message. Its works on oracle DB with java back-end.",
+      "technologies": [
+        "Angular 4",
+        "HTML 5",
+        "SASS",
+        "Material Design",
+        "Angular CLI",
+        "Jira"
+      ],
+      "responsibilities": [
+        "Development of angular 4.0 components.",
+        "Front end architecture of the application.",
+        "Client side validations",
+        "Front-end service calls",
+        "Development of UI reusable components.",
+        "Integration of components to the application."
+      ]
+    },{
+      "clientName": "Canon",
+      "projectUrl":"https://portal.canon-me.com",
+      "discription": "Business to business portal web application for CANON. It work as an online ordering system between partners and canon. It works on oracle DB.",
+      "technologies": [
+        "Angular 2",
+        "HTML 5",
+        "SASS",
+        "Material Design",
+        "Angular CLI",
+        "Redmine"
+      ],
+      "responsibilities": [
+        "Implementing Angular 2.0 technology.",
+        "Front end architecture of the application.",
+        "Client side validations",
+        "Front-end service calls",
+        "Heads up UI Development",
+        "Installation and setup of Angular CLI"
+      ]
+    },{
+      "clientName": "Kerala Cricket Assosiation [Front foot]",
+      "discription": "An Angular 2 web ERP application. It is the core business process management software for Kerala cricket association. It contains about 17 modules.",
+      "technologies": [
+        "Angular 2",
+        "HTML 5",
+        "SASS",
+        "Material Design",
+        "Angular CLI",
+        "Redmine"
+      ],
+      "responsibilities": [
+        "Implementing Angular 2 technology.",
+        "UI Development.",
+        "Client side validations",
+        "Front-end service calls",
+        "Installation and setup of Angular CLI"
+      ]
+    },{
+      "clientName": "Bombardier Test Sutra",
+      "discription": "Android hybrid application developed using Angular JS and ionic framework.  Test Sutra is an application suite, which help organizations, streamline their Testing, Quality and Safety Inspections.",
+      "technologies": [
+        "Angular Js",
+        "Ionic",
+        "CSS",
+        "Bootstrap 3"
+      ],
+      "responsibilities": [
+        "Fixing the front-end bugs.",
+        "Front end changes as per request."
+      ]
+    }]
+  }
+]

@@ -1,0 +1,170 @@
+@import "./../../assets/style/variables.scss";
+
+.container {
+  padding: 20px 60px;
+  color: #626c7d !important;
+
+  .header {
+    padding: 0 0 20px;
+    label{
+      padding-left: 10px;
+      position: relative;
+      top: -5px;
+    }
+    div{
+      cursor: pointer;
+    }
+  }
+
+  .company {
+    background: #fff;
+    box-shadow: 0px 2px 6px 0px rgba(1, 1, 1, 0.4);
+    width: 100%;
+    padding: 37px 41px;
+    border-top: 4px solid $primary-color;
+
+    .company-header {
+      border-bottom: 1px solid #e8e5e5;
+      padding-bottom: 14px;
+
+      .company-name {
+        font-size: 20px;
+        padding-bottom: 26px;
+      }
+
+      .role {
+        label {
+          margin-bottom: 6px;
+          font-family: 'Roboto';
+          font-style: italic;
+          font-size: 16px;
+        }
+
+      }
+    }
+
+    .role-des {
+      padding-top: 24px;
+
+      .description {
+
+        padding-bottom: 28px;
+        font-size: 14px;
+      }
+
+      .projects {
+        text-align: left;
+        padding-top: 28px;
+
+        &>label {
+
+          font-size: 16px;
+          padding-bottom: 42px;
+          margin: 0;
+        }
+
+        .project-list {
+          position: relative;
+
+          .project-details {
+            padding-left: 40px;
+            padding-top: 60px;
+
+            .project-name {
+              font-size: 24px;
+              color: $primary-color;
+              position: relative;
+              padding-bottom: 21px;
+
+              &:before {
+                content: "";
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background-color: rgb(239, 239, 239);
+                left: -46px;
+                top: 11px;
+              }
+            }
+
+            .project-des {
+              font-size: 15px;
+              padding-bottom: 26px;
+
+            }
+
+            .project-technologies {
+              padding-top: 12px;
+              padding-bottom: 26px;
+
+              .technolgies-list {
+                .tech {
+                  width: auto;
+                  float: left;
+                  background: #efefef;
+                  color: #4c4c4c;
+                  border-radius: 17px;
+                  padding: 4px 20px;
+                  margin: 12px;
+                  margin-bottom: 0;
+
+                }
+
+                &> {
+                  margin: 0;
+                  padding-bottom: 8px;
+                }
+              }
+            }
+
+            .project-responsibilities {
+              padding-top: 12px;
+
+              ul {
+                list-style: none;
+                margin-left: 15px;
+                font-size: 15px;
+              }
+
+              &>label {
+                padding-bottom: 21px;
+                margin: 0;
+              }
+            }
+            &:first-child{
+              padding-top: 0px;
+            }
+          }
+          
+          &:before {
+            content: "";
+            position: absolute;
+            height: calc(100% - 22px);
+            width: 0;
+            left: 0;
+            top: 22px;
+            border-left: 3px solid rgb(239, 239, 239);
+        }
+        }
+      }
+    }
+  }
+}
+
+.link {
+  float: right;
+}
+
+
+@media only screen and (max-width: 770px) {
+  .container{
+    padding: 20px;
+    width: 100%;
+  }
+  .link{
+    mat-icon{
+      font-size: 40px;
+    }
+  }
+}
