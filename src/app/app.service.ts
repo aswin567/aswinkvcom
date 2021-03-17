@@ -9,6 +9,7 @@ import { TimePeriod } from './interface/time-period';
   providedIn: 'root'
 })
 export class AppService {
+  timePeriod$: Observable<TimePeriod>;
 
   constructor(private http: HttpClient) { }
 
@@ -33,6 +34,7 @@ export class AppService {
   }
 
   getTimePeriods(): Observable<TimePeriod>{
-    return this.http.get<TimePeriod>('https://rocky-shore-96971.herokuapp.com/getPeriod');
+    this.timePeriod$ = this.http.get<TimePeriod>('https://aswin-info.vercel.app/getPeriod');
+    return this.timePeriod$;
   }
 }

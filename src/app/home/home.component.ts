@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Contact } from '../app';
 import { AppService } from '../app.service';
 import { Skill } from '../interface/skill';
+import { TimePeriod } from '../interface/time-period';
 import { WorkExperince } from '../interface/work-experince';
 
 @Component({
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
   lng = 76.2709484;
   zoom = 15;
   age: string | number;
-  experince: string | number;
+  experince:Observable<TimePeriod>;
   workExperinces$: Observable<Array<WorkExperince>>;
   educationDetails$: Observable<Array<WorkExperince>>;
   scrollPosition: number;
@@ -60,7 +61,7 @@ export class HomeComponent implements OnInit {
     this.onGetSkillInitDetails();
     this.onGetIntro();
     this.findMyAge();
-    this.experince = this.getExperince('09/07/2015');
+    this.experince = this.appService.timePeriod$;
   }
   @HostListener('window:scroll', [])
   onWindowScroll() {

@@ -1,9 +1,9 @@
-<div class="internal-loading" *ngIf="isLoading; else loadingBlock">
+<div class="internal-loading" >
     <div class="spinner-conatiner">
         <div class="spinner"> A </div>
     </div>
     <div class="middle-strip">
-        <h2 *ngIf="timePeriod">I am working as professional enginner for last</h2>
+        <h2 *ngIf="timePeriod">Professional <span>Experience</span> </h2>
         <mat-progress-bar [mode]="loaderMode" [value]="loadingValue"></mat-progress-bar>
         <div class="time" *ngIf="timePeriod">
             <div class="date">
@@ -33,9 +33,9 @@
         </div>
     </div>
 </div>
-<ng-template #loadingBlock>
+<!-- <ng-template #loadingBlock>
     <div class="loaded">
         <router-outlet></router-outlet>
     </div>
 
-</ng-template>
+</ng-template> -->

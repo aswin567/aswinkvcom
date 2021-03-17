@@ -89,7 +89,7 @@
                 </li>
                 <li class="clearfix">
                   <strong class="title">Expirence</strong>
-                  <span class="cont">{{experince}}</span>
+                  <span class="cont" *ngIf="(experince | async) as exp">{{exp.years}} Year(s), {{exp.months}} Month(s) and {{exp.days}} Day(s)</span>
                 </li>
               </ul>
             </div>
@@ -260,7 +260,7 @@
                   </li>
                   <li class="clearfix">
                     <strong>Address</strong>
-                    <span>Kakanad, Kochi-030, Kerala, India</span>
+                    <span>Electronic City, Banglore-100, Kerala, India</span>
                   </li>
                 </ul>
                 <div class="map-container">
