@@ -29,7 +29,7 @@ export class AppComponent {
       }, 60);
       setTimeout(() => {
         this.isLoading = false;
-      }, 10000);
+      }, 8000);
       setInterval(() => {
         this.timePeriod.seconds = this.timePeriod.seconds + 1;
         if (this.timePeriod.seconds >= 60) {

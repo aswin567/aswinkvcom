@@ -1,4 +1,4 @@
-<div class="internal-loading" >
+<div class="internal-loading" *ngIf="isLoading; else loadingBlock" >
     <div class="spinner-conatiner">
         <div class="spinner"> A </div>
     </div>
@@ -33,9 +33,9 @@
         </div>
     </div>
 </div>
-<!-- <ng-template #loadingBlock>
+<ng-template #loadingBlock>
     <div class="loaded">
         <router-outlet></router-outlet>
     </div>
 
-</ng-template> -->
+</ng-template>
