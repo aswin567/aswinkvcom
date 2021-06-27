@@ -13,28 +13,32 @@ export class AppService {
 
   constructor(private http: HttpClient) { }
 
-  getWorkExperince(): Observable<Array<WorkExperince>>{
+  getWorkExperince(): Observable<Array<WorkExperince>> {
     return this.http.get<Array<WorkExperince>>('assets/configs/work-experince.json')
   }
 
-  getEducationDetails(): Observable<Array<WorkExperince>>{
+  getEducationDetails(): Observable<Array<WorkExperince>> {
     return this.http.get<Array<WorkExperince>>('assets/configs/eductaion.json')
   }
 
-  getSkills(): Observable<Array<Skill>>{
+  getSkills(): Observable<Array<Skill>> {
     return this.http.get<Array<Skill>>('assets/configs/skills.json');
   }
 
-  getSkillsInit(): Observable<Array<Skill>>{
+  getSkillsInit(): Observable<Array<Skill>> {
     return this.http.get<Array<Skill>>('assets/configs/skillInit.json');
   }
 
-  getIntro(): Observable<string>{
+  getIntro(): Observable<string> {
     return this.http.get<string>('assets/configs/intro.json');
   }
 
-  getTimePeriods(): Observable<TimePeriod>{
+  getTimePeriods(): Observable<TimePeriod> {
     this.timePeriod$ = this.http.get<TimePeriod>('https://aswin-info.vercel.app/getPeriod');
     return this.timePeriod$;
+  }
+
+  sendMail(messageDetails: any): Observable<any> {
+    return this.http.post<any>('https://aswin-info.vercel.app/sendemail', messageDetails);
   }
 }

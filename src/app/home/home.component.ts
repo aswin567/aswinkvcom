@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   lng = 76.2709484;
   zoom = 15;
   age: string | number;
-  experince:Observable<TimePeriod>;
+  experince: Observable<TimePeriod>;
   workExperinces$: Observable<Array<WorkExperince>>;
   educationDetails$: Observable<Array<WorkExperince>>;
   scrollPosition: number;
@@ -156,224 +156,229 @@ export class HomeComponent implements OnInit {
     this.age = age;
   }
 
-getExperince(dateString) {
-  const now = new Date();
-  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  getExperince(dateString) {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  const yearNow = now.getFullYear();
-  const monthNow = now.getMonth();
-  const dateNow = now.getDate();
+    const yearNow = now.getFullYear();
+    const monthNow = now.getMonth();
+    const dateNow = now.getDate();
 
-  const dob = new Date(dateString.substring(6, 10),
-    dateString.substring(0, 2) - 1,
-    dateString.substring(3, 5)
-  );
+    const dob = new Date(dateString.substring(6, 10),
+      dateString.substring(0, 2) - 1,
+      dateString.substring(3, 5)
+    );
 
-  const yearDob = dob.getFullYear();
-  const monthDob = dob.getMonth();
-  const dateDob = dob.getDate();
-  let age: any = {};
-  let ageString = '';
-  let yearString = '';
-  let monthString = '';
-  let dayString = '';
+    const yearDob = dob.getFullYear();
+    const monthDob = dob.getMonth();
+    const dateDob = dob.getDate();
+    let age: any = {};
+    let ageString = '';
+    let yearString = '';
+    let monthString = '';
+    let dayString = '';
 
 
-  let yearAge = yearNow - yearDob;
+    let yearAge = yearNow - yearDob;
 
-  if (monthNow >= monthDob) {
-    var monthAge = monthNow - monthDob;
-  } else {
-    yearAge--;
-    var monthAge = 12 + monthNow - monthDob;
-  }
-
-  if (dateNow >= dateDob) {
-    var dateAge = dateNow - dateDob;
-  } else {
-    monthAge--;
-    var dateAge = 31 + dateNow - dateDob;
-
-    if (monthAge < 0) {
-      monthAge = 11;
+    if (monthNow >= monthDob) {
+      var monthAge = monthNow - monthDob;
+    } else {
       yearAge--;
+      var monthAge = 12 + monthNow - monthDob;
     }
+
+    if (dateNow >= dateDob) {
+      var dateAge = dateNow - dateDob;
+    } else {
+      monthAge--;
+      var dateAge = 31 + dateNow - dateDob;
+
+      if (monthAge < 0) {
+        monthAge = 11;
+        yearAge--;
+      }
+    }
+
+    age = {
+      years: yearAge,
+      months: monthAge,
+      days: dateAge
+    };
+
+    if (age.years > 1) { yearString = ' years'; } else { yearString = ' year'; }
+    if (age.months > 1) { monthString = ' months'; } else { monthString = ' month'; }
+    if (age.days > 1) { dayString = ' days'; } else { dayString = ' day'; }
+
+
+    if ((age.years > 0) && (age.months > 0) && (age.days > 0)) {
+      ageString = age.years + yearString + ', ' + age.months + monthString + ', and ' + age.days + dayString;
+    } else if ((age.years === 0) && (age.months === 0) && (age.days > 0)) {
+      ageString = 'Only ' + age.days + dayString;
+    } else if ((age.years > 0) && (age.months === 0) && (age.days === 0)) {
+      ageString = age.years + yearString;
+    } else if ((age.years > 0) && (age.months > 0) && (age.days === 0)) {
+      ageString = age.years + yearString + ' and ' + age.months + monthString;
+    } else if ((age.years === 0) && (age.months > 0) && (age.days > 0)) {
+      ageString = age.months + monthString + ' and ' + age.days + dayString;
+    } else if ((age.years > 0) && (age.months === 0) && (age.days > 0)) {
+      ageString = age.years + yearString + ' and ' + age.days + dayString;
+    } else if ((age.years === 0) && (age.months > 0) && (age.days === 0)) {
+      ageString = age.months + monthString;
+    } else { ageString = 'Oops! Could not calculate age!'; }
+
+    return ageString;
   }
 
-  age = {
-    years: yearAge,
-    months: monthAge,
-    days: dateAge
-  };
+  onIntializeSkills() {
 
-  if (age.years > 1) { yearString = ' years'; } else { yearString = ' year'; }
-  if (age.months > 1) { monthString = ' months'; } else { monthString = ' month'; }
-  if (age.days > 1) { dayString = ' days'; } else { dayString = ' day'; }
-
-
-  if ((age.years > 0) && (age.months > 0) && (age.days > 0)) {
-    ageString = age.years + yearString + ', ' + age.months + monthString + ', and ' + age.days + dayString ;
-  } else if ((age.years === 0) && (age.months === 0) && (age.days > 0)) {
-    ageString = 'Only ' + age.days + dayString ;
- } else if ((age.years > 0) && (age.months === 0) && (age.days === 0)) {
-    ageString = age.years + yearString;
- } else if ((age.years > 0) && (age.months > 0) && (age.days === 0)) {
-    ageString = age.years + yearString + ' and ' + age.months + monthString ;
- } else if ((age.years === 0) && (age.months > 0) && (age.days > 0)) {
-    ageString = age.months + monthString + ' and ' + age.days + dayString ;
- } else if ((age.years > 0) && (age.months === 0) && (age.days > 0)) {
-    ageString = age.years + yearString + ' and ' + age.days + dayString ;
- } else if ((age.years === 0) && (age.months > 0) && (age.days === 0)) {
-    ageString = age.months + monthString ;
- } else { ageString = 'Oops! Could not calculate age!'; }
-
-  return ageString;
-}
-
-onIntializeSkills() {
-
-  this.appService.getSkills().subscribe((res) => {
-    this.skills = res;
-    let i = 0;
-    while (i < this.skills.length) {
-      this.initSkills[i].rating = this.skills[i].rating;
-      i++;
-    }
-  });
-}
-createForm() {
-  this.appMasterForm = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', Validators.compose([Validators.required, Validators.email])],
-    subject: ['', Validators.required],
-    content: ['', Validators.required]
-  });
-
-}
-
-onScroll(value) {
-  console.log(value);
-}
-
-onInitialize() {
-  // this.skill = {
-  //   html: 0,
-  //   css: 0,
-  //   js: 0,
-  //   ts: 0,
-  //   angular: 0,
-  //   sass: 0,
-  //   md: 0,
-  //   bs: 0,
-  //   git: 0,
-  //   photoshop: 0,
-  //   jira: 0,
-  //   redmine: 0
-  // };
-  this.contact = {
-    name: '',
-    email: '',
-    subject: '',
-    content: '',
-  };
-  this.menu = {
-    about: true,
-    skill: false,
-    exp: false,
-    edu: false,
-    pf: false,
-    contact: false,
-  };
-  this.expandMenu = false;
-  this.cardUp = false;
-  this.headerTrasparent = false;
-  this.exMarginTrans = false;
-  this.edMarginTrans = false;
-  this.tosterActive = false;
-  this.cardAnimate();
-  this.reset();
-}
-
-cardAnimate() {
-  setTimeout(function() {
-    this.cardUp = true;
-  }, 1000);
-}
-
-onExpandMenu() {
-  this.expandMenu = !this.expandMenu;
-}
-
-onNavigate(activeMenu) {
-  switch (activeMenu) {
-    case 'abt':
-      this.menu.about = true;
-      this.menu.skill = false;
-      this.menu.exp = false;
-      this.menu.edu = false;
-      this.menu.pf = false;
-      this.menu.contact = false;
-      break;
-    case 'skills':
-      this.menu.about = false;
-      this.menu.skill = true;
-      this.menu.exp = false;
-      this.menu.edu = false;
-      this.menu.pf = false;
-      this.menu.contact = false;
-      break;
-    case 'exp':
-      this.menu.about = false;
-      this.menu.skill = false;
-      this.menu.exp = true;
-      this.menu.edu = false;
-      this.menu.pf = false;
-      this.menu.contact = false;
-      break;
-    case 'pf':
-      this.menu.about = false;
-      this.menu.skill = false;
-      this.menu.exp = false;
-      this.menu.edu = false;
-      this.menu.pf = true;
-      this.menu.contact = false;
-      break;
-    case 'contact':
-      this.menu.about = false;
-      this.menu.skill = false;
-      this.menu.exp = false;
-      this.menu.edu = false;
-      this.menu.pf = false;
-      this.menu.contact = true;
-      break;
-  }
-}
-
-reset() {
-
-  this.contact = {
-    name: '',
-    email: '',
-    subject: '',
-    content: ''
-  };
-
-}
-
-closeToster() {
-  this.tosterActive = false;
-}
-
-submit() {
-
-  const timeoutIde = setTimeout(() => {
-    this.matSnackBar.open('Message send sucessfully', 'Ok', {
-      duration: 5000
+    this.appService.getSkills().subscribe((res) => {
+      this.skills = res;
+      let i = 0;
+      while (i < this.skills.length) {
+        this.initSkills[i].rating = this.skills[i].rating;
+        i++;
+      }
     });
-    this.appMasterForm.reset();
-  }, 300);
-}
-about() {
-  window.scrollTo(0, 0);
-}
+  }
+  createForm() {
+    this.appMasterForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      mobile: ['', Validators.compose([Validators.maxLength(10), Validators.minLength(10), Validators.pattern('^[0-9]*$')])],
+      subject: ['', Validators.required],
+      content: ['', Validators.required]
+    });
+
+  }
+
+  onScroll(value) {
+    console.log(value);
+  }
+
+  onInitialize() {
+    // this.skill = {
+    //   html: 0,
+    //   css: 0,
+    //   js: 0,
+    //   ts: 0,
+    //   angular: 0,
+    //   sass: 0,
+    //   md: 0,
+    //   bs: 0,
+    //   git: 0,
+    //   photoshop: 0,
+    //   jira: 0,
+    //   redmine: 0
+    // };
+    this.contact = {
+      name: '',
+      email: '',
+      subject: '',
+      content: '',
+    };
+    this.menu = {
+      about: true,
+      skill: false,
+      exp: false,
+      edu: false,
+      pf: false,
+      contact: false,
+    };
+    this.expandMenu = false;
+    this.cardUp = false;
+    this.headerTrasparent = false;
+    this.exMarginTrans = false;
+    this.edMarginTrans = false;
+    this.tosterActive = false;
+    this.cardAnimate();
+    this.reset();
+  }
+
+  cardAnimate() {
+    setTimeout(function () {
+      this.cardUp = true;
+    }, 1000);
+  }
+
+  onExpandMenu() {
+    this.expandMenu = !this.expandMenu;
+  }
+
+  onNavigate(activeMenu) {
+    switch (activeMenu) {
+      case 'abt':
+        this.menu.about = true;
+        this.menu.skill = false;
+        this.menu.exp = false;
+        this.menu.edu = false;
+        this.menu.pf = false;
+        this.menu.contact = false;
+        break;
+      case 'skills':
+        this.menu.about = false;
+        this.menu.skill = true;
+        this.menu.exp = false;
+        this.menu.edu = false;
+        this.menu.pf = false;
+        this.menu.contact = false;
+        break;
+      case 'exp':
+        this.menu.about = false;
+        this.menu.skill = false;
+        this.menu.exp = true;
+        this.menu.edu = false;
+        this.menu.pf = false;
+        this.menu.contact = false;
+        break;
+      case 'pf':
+        this.menu.about = false;
+        this.menu.skill = false;
+        this.menu.exp = false;
+        this.menu.edu = false;
+        this.menu.pf = true;
+        this.menu.contact = false;
+        break;
+      case 'contact':
+        this.menu.about = false;
+        this.menu.skill = false;
+        this.menu.exp = false;
+        this.menu.edu = false;
+        this.menu.pf = false;
+        this.menu.contact = true;
+        break;
+    }
+  }
+
+  reset() {
+
+    this.contact = {
+      name: '',
+      email: '',
+      subject: '',
+      content: ''
+    };
+
+  }
+
+  closeToster() {
+    this.tosterActive = false;
+  }
+
+  submit() {
+    if (this.appMasterForm.valid) {
+      this.appService.sendMail(this.appMasterForm.value).subscribe((res) => {
+
+        this.appMasterForm.reset();
+        console.log(res);
+        this.matSnackBar.open('Message send sucessfully', 'Ok', {
+          duration: 5000
+        });
+      })
+    }
+  }
+
+  about() {
+    window.scrollTo(0, 0);
+  }
 }
