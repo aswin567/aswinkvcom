@@ -10,6 +10,24 @@
     url('../fonts/fontawesome-webfont.svg#Roboto-Bold') format('svg');
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  src: url('../fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  src: url('../fonts/open-sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  font-weight: 400;
+  src: url('../fonts/bebas neue/BebasNeue-Regular.ttf');
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -154,4 +172,13 @@ body {
 
 .clear-fix {
   clear: both;
+}
+
+.middle-strip {
+
+  h2,
+  .time {
+
+    font-family: 'Bebas Neue', sans-serif;
+  }
 }

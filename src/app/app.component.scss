@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :host{
     width: 100%;
@@ -22,7 +21,6 @@
         h2{
             text-align: center;
             font-size: 50px;
-            font-family: 'Bebas Neue', cursive;
             span{
                 color: #c4c6cc;
             }
@@ -30,7 +28,7 @@
         .time{
             width: 100%;
             text-align: center;
-            font-family: 'Bebas Neue', cursive;
+            font-family: 'Bebas Neue', sans-serif;
             .time-factor{
                 color: #c4c6cc;
             }

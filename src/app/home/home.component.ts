@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   contact: Contact;
   skills: Array<Skill>;
   initSkills: Array<Skill>;
-
+  skillIniateFirst = true;
   appMasterForm: FormGroup;
 
   menu: {
@@ -91,7 +91,11 @@ export class HomeComponent implements OnInit {
 
     }
     if (scrollPosition > 700) {
-      this.onIntializeSkills();
+      if(this.skillIniateFirst){
+
+        this.skillIniateFirst = false;
+        this.onIntializeSkills();
+      }
     }
     if (scrollPosition > 1100) {
       this.exHeaderUp = true;
@@ -240,6 +244,7 @@ export class HomeComponent implements OnInit {
         i++;
       }
     });
+
   }
   createForm() {
     this.appMasterForm = this.fb.group({
