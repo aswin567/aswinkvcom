@@ -10,14 +10,6 @@
     url('../fonts/fontawesome-webfont.svg#Roboto-Bold') format('svg');
 }
 
-@font-face {
-  font-family: 'Roboto';
-  font-weight: 400;
-  src: url('../fonts/roboto/RobotoRegular.ttf');
-  src: url('../fonts/roboto/RobotoRegular.woff2') format('woff2'),
-    url('../fonts/roboto/RobotoRegular.woff') format('woff'),
-}
-
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
